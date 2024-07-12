@@ -1,0 +1,1 @@
+#Obtaining an UMI count matrix for proximal-to-distal survey of healthy adult human small intestine and colon epithelium by single-cell transcriptomics (Bioproject: PRJNA768275) and preliminary analysis using Cell Ranger (10x Genomics).
