@@ -1,4 +1,4 @@
-```
+
 #!/bin/bash
 
 #SBATCH --time 1:00:00
@@ -22,5 +22,3 @@ fasta=${indexname}'.fasta'
 Hisat2image=/share/singularity/images/ccs/conda/amd-conda2-centos8.sinf
 
 singularity run --app hisat2221 /share/singularity/images/ccs/conda/amd-conda2-centos8.sinf hisat2-build -l -p 16 $indexdir/$fasta $indexdir/$indexname
-
-```
