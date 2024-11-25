@@ -27,8 +27,8 @@ fasta=${indexname}'.fna.gz'
 # establish the directory with the index inside of it
 indexdir=/project/farman_s24cs485g/mbmo231/Horse_ref/${indexname}_index
 # run the Hisat indexing on the fasta file that we talked about above
-#singularity run --app hisat2221 $Hisat2image hisat2-build --large-index -p 16 GRCh38p14_index/GRCh38p14.fasta GRCh38p14_index/GRCh38p
-singularity run --app hisat2221 $Hisat2image hisat2-build --large-index -p 16 /project/farman_s24cs485g/mbmo231/Horse_ref/GCF_002863925.1_EquCab3.0_genomic.fna.gz 
+#singularity run --app hisat2221 $Hisat2image hisat2-build --large-index -p 8 GRCh38p14_index/GRCh38p14.fasta GRCh38p14_index/GRCh38p
+singularity run --app hisat2221 $Hisat2image hisat2-build --large-index -p 8 /project/farman_s24cs485g/mbmo231/Horse_ref/GCF_002863925.1_EquCab3.0_genomic.fna.gz 
 
 ```
 ## Mapping next-generation sequencing reads using Hisat2 to Equcab3 index 
@@ -76,7 +76,7 @@ cp $dir/1_S27_R2_001.fastq.gz   $f/
 
 # do the actual aligning and then send everything through samtools for sorting (and convertion from SAM to BAM format)
 singularity run --app hisat2221 $Hisat2image hisat2 \
--p 16 -x $indexdir/$indexname -1 $f/1_S27_R1_001.fastq.gz -2 $f/1_S27_R2_001.fastq.gz     \
+-p 8 -x $indexdir/$indexname -1 $f/1_S27_R1_001.fastq.gz -2 $f/1_S27_R2_001.fastq.gz     \
 --summary-file alignments/JI_1_S27_.txt --dta-cufflink   \
 | $SAMTOOLS sort - -@ 16 -O bam -o alignments/HS_JI_accepted_hits_1_S27_.bam
 ```
