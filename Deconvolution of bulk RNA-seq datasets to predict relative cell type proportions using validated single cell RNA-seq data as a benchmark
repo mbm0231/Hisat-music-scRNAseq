@@ -1,4 +1,4 @@
-
+# Update Deconvolution of bulk RNA-seq datasets to predict relative cell type proportions using validated single cell RNA-seq data as a benchmark
 #!/bin/bash
 
 #SBATCH --time 1:00:00
